@@ -56,8 +56,15 @@ gem 'autoprefixer-rails'
 
 # captcha 
 # gem "recaptcha", require: "recaptcha/rails"
-gem 'simple_captcha2', require: 'simple_captcha'
-
+# gem 'simple_captcha2', require: 'simple_captcha'
 
 # dotenv
 gem 'dotenv-rails', groups: [:development, :test]
+
+# mailgun
+# gem 'mailgun-ruby', '~>1.1.4'
+
+group :development do
+     gem "letter_opener"
+     gem "roadie"
+end

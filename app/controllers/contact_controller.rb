@@ -1,5 +1,5 @@
 class ContactController < ApplicationController
-  include SimpleCaptcha::ControllerHelpers
+  # include SimpleCaptcha::ControllerHelpers
   layout 'application'
   def list
     @contact = Contact.all
@@ -12,7 +12,8 @@ class ContactController < ApplicationController
 
   def create
     @contact = Contact.new(contact_info)
-    if verify_recaptcha(model: @contact) && @contact.save
+    if @contact.save
+      UserMailer.thankyou_email(@contact).deliver_now
       redirect_to :action => 'thankyou'
     else
       render :action => "new"

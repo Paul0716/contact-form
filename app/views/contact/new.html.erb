@@ -23,11 +23,6 @@
             <label>Message:</label>
             <%= text_area 'contacts','message', class: 'form-control', rows: 10, cols: 25, placeholder: "Leave Your Message Here." %>
         </div>
-        <div class="row">
-            <div class="col-sm-offset3 col-sm-3 col-xs-12">
-                <%= show_simple_captcha %>
-            </div>
-        </div>    
         
         <!-- captcha -->
         <%= submit_tag "Clear", type: "reset", class: "btn btn-default" %>
