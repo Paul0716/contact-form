@@ -7,4 +7,5 @@ Rails.application.routes.draw do |map|
   get 'contact/thankyou'
   # simple captcha
   # map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'
+  resources :user
 end
